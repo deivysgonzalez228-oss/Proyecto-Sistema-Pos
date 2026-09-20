@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abarrotes El Progreso - Panel Modular</title>
+    
+    <!-- Vinculación con la carpeta CSS -->
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <!-- <header>: Encabezado semántico de la app -->
+    <header class="moqups-header">
+        <h1>SISTEMA DE GESTIÓN - ABARROTES EL PROGRESO</h1>
+        <div class="header-meta">
+            <span class="badge-active">🟢 Lector Activo</span>
+            <span class="user-info">Cajero: admin</span>
+        </div>
+    </header>
+
+    <!-- <nav>: Barra de navegación para las pestañas -->
+    <nav class="moqups-nav">
+        <ul>
+            <li><a href="#" class="nav-link active" onclick="cambiarModulo('inventario', this)">📦 Registro de Productos</a></li>
+            <li><a href="#" class="nav-link" onclick="cambiarModulo('pos', this)">🛒 Punto de Venta (POS)</a></li>
+            <li><a href="#" class="nav-link" onclick="cambiarModulo('creditos', this)">💳 Créditos y Fiados</a></li>
+        </ul>
+    </nav>
+
+    <!-- <main>: Contenedor del contenido principal -->
+    <main class="moqups-main-container">
+
+        <!-- <section> 1: Registro de Productos -->
+        <section id="inventario" class="moqups-section-card modulo-seccion active">
+            <h3>REGISTRO DE PRODUCTOS (RF-02)</h3>
+            <p class="section-subtitle">📌 Nuevo Producto</p>
+            
+            <form class="moqups-grid-form" onsubmit="return false;">
+                <div class="field-box">
+                    <label>Código de Barras</label>
+                    <input type="text" value="770123456789">
+                </div>
+                <div class="field-box">
+                    <label>Nombre del Producto</label>
+                    <input type="text" value="Arroz Diana 1KG">
+                </div>
+                <div class="field-box">
+                    <label>Precio de Compra</label>
+                    <input type="text" value="$3,100">
+                </div>
+                <div class="field-box">
+                    <label>Precio de Venta</label>
+                    <input type="text" value="$3,800">
+                </div>
+                <div class="field-box">
+                    <label>Stock Inicial</label>
+                    <input type="number" value="100">
+                </div>
+                <div class="field-box">
+                    <label>Stock Mínimo</label>
+                    <input type="number" value="15">
+                </div>
+                <button class="btn-moqups-action btn-green">💾 Guardar Producto</button>
+            </form>
+        </section>
+
+        <!-- <section> 2: Punto de Venta -->
+        <section id="pos" class="moqups-section-card modulo-seccion">
+            <h3>PUNTO DE VENTA (POS) (RF-03)</h3>
+            
+            <!-- <table>: Estructura de tabla semántica -->
+            <table class="moqups-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arroz Diana 1KG</td>
+                        <td>1</td>
+                        <td>$3,800</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="moqups-summary-box">
+                <div class="summary-line">
+                    <span>Total Neto:</span>
+                    <span class="total-badge">$ 3,800</span>
+                </div>
+                <div class="summary-line">
+                    <label>Monto Recibido</label>
+                    <input type="text" value="$5,000" class="input-summary">
+                </div>
+                <div class="summary-line">
+                    <span>Vueltas a entregar</span>
+                    <span>$1,200</span>
+                </div>
+            </div>
+            <button class="btn-moqups-action btn-green">🖨️ Registrar & Imprimir Ticket</button>
+        </section>
+
+        <!-- <section> 3: Créditos y Fiados -->
+        <section id="creditos" class="moqups-section-card modulo-seccion">
+            <h3>CRÉDITOS Y FIADOS (RF-04)</h3>
+            <p class="section-subtitle">👥 Asignar Cartera - Fiado</p>
+            
+            <div class="moqups-search-group">
+                <label>Buscar Cliente</label>
+                <input type="text" value="María Gómez" class="input-full">
+            </div>
+
+            <div class="moqups-details-box">
+                <h4>Datos del Cliente:</h4>
+                <p><strong>Identificación:</strong> CC 52.345.678</p>
+                <p><strong>Saldo Anterior:</strong> $ 15,200</p>
+                <p><strong>Monto a Adicionar:</strong> $3,800</p>
+            </div>
+
+            <div class="moqups-buttons-container">
+                <button class="btn-moqups-action btn-orange">✓ Autorizar Crédito ("Fiado")</button>
+                <button class="btn-moqups-action btn-blue">Cancelar Asignación</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Vinculación con la carpeta JS antes del cierre del body -->
+    <script src="../js/orden.js"></script>
+</body>
+</html>

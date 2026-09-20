@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a4f5e;
+    color: #ffffff;
+}
+
+/* Control de visibilidad de pestañas */
+.modulo-seccion {
+    display: none;
+}
+.modulo-seccion.active {
+    display: block;
+}
+
+/* Cabecera */
+.moqups-header {
+    background-color: #083e4a;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0b4350;
+}
+.moqups-header h1 { font-size: 16px; margin: 0; letter-spacing: 1px; }
+.header-meta { display: flex; gap: 15px; font-size: 13px; }
+.badge-active { background-color: #0b4350; padding: 3px 10px; border-radius: 4px; border: 1px solid #10b981; }
+
+/* Menú */
+.moqups-nav {
+    background-color: #06313b;
+    padding: 0 40px;
+    border-bottom: 2px solid #1e7185;
+}
+.moqups-nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 10px; }
+.moqups-nav ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13px;
+    display: block;
+    padding: 15px 20px;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+}
+.moqups-nav ul li a.active {
+    color: #10b981;
+    border-bottom: 3px solid #10b981;
+    background-color: #0a4f5e;
+}
+.moqups-nav ul li a:hover { color: #ffffff; background-color: #083e4a; }
+
+/* Contenedores y Tarjetas */
+.moqups-main-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+.moqups-section-card { background-color: #0a4f5e; border: 1px solid #1e7185; border-radius: 6px; padding: 25px; }
+.moqups-section-card h3 { margin-top: 0; font-size: 15px; border-bottom: 1px solid #1e7185; padding-bottom: 10px; }
+.section-subtitle { font-size: 13px; color: #cbd5e1; margin-bottom: 20px; }
+
+/* Formulario Grid */
+.moqups-grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.field-box { display: flex; flex-direction: column; }
+.field-box label { font-size: 12px; margin-bottom: 5px; color: #cbd5e1; }
+.field-box input { padding: 10px; border-radius: 4px; border: 1px solid #cbd5e1; color: #334155; font-size: 14px; }
+.input-full { width: 97%; padding: 10px; border-radius: 4px; border: 1px solid #cbd5e1; }
+
+/* Tablas y Cajas POS */
+.moqups-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.moqups-table th, .moqups-table td { padding: 10px; text-align: left; border-bottom: 1px solid #1e7185; font-size: 13px; }
+.moqups-summary-box { margin-top: 25px; padding: 15px; background-color: #083e4a; border-radius: 4px; }
+.summary-line { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.total-badge { background-color: #ffffff; color: #0a4f5e; padding: 4px 12px; border-radius: 4px; font-weight: bold; }
+.input-summary { padding: 6px; width: 90px; text-align: right; border-radius: 4px; border: 1px solid #cbd5e1; }
+.moqups-details-box { background-color: #083e4a; padding: 15px; border-radius: 4px; margin: 20px 0; font-size: 13px; }
+
+/* Botones */
+.btn-moqups-action { padding: 10px 20px; border: none; border-radius: 4px; font-weight: bold; font-size: 13px; cursor: pointer; }
+.moqups-grid-form .btn-moqups-action { grid-column: span 2; margin-top: 10px; }
+.moqups-buttons-container { display: flex; gap: 15px; }
+.btn-green { background-color: #10b981; color: white; }
+.btn-orange { background-color: #f97316; color: white; }
+.btn-blue { background-color: #3b82f6; color: white; }
