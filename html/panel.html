@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abarrotes El Progreso - Panel Modular</title>
+    <!-- Vinculación al CSS -->
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <!-- Encabezado con Configuración y Salir en la esquina derecha -->
+    <header class="moqups-header">
+        <h1>SISTEMA DE GESTIÓN - ABARROTES EL PROGRESO</h1>
+        <div class="header-meta">
+            <span class="badge-active">🟢 Lector Activo</span>
+            <span class="user-info">Cajero: admin</span>
+            
+            <!-- Botón de Configuración en la esquina -->
+            <button class="btn-icon-header" title="Configuración del Sistema" onclick="cambiarModulo('configuracion', this)">⚙️</button>
+            
+            <!-- Botón de Salir -->
+            <a href="index.html" class="btn-logout-header" title="Cerrar Sesión">🚪 Salir</a>
+        </div>
+    </header>
+
+    <!-- Barra de Navegación Principal (5 Pestañas) -->
+    <nav class="moqups-nav">
+        <ul>
+            <li><a href="#" class="nav-link active" onclick="cambiarModulo('inventario', this)">📦 Registro de Productos</a></li>
+            <li><a href="#" class="nav-link" onclick="cambiarModulo('pos', this)">🛒 Punto de Venta (POS)</a></li>
+            <li><a href="#" class="nav-link" onclick="cambiarModulo('creditos', this)">💳 Créditos y Fiados</a></li>
+            <li><a href="#" class="nav-link" onclick="cambiarModulo('reportes', this)">📊 Reportes Rápidos</a></li>
+            <li><a href="#" class="nav-link" onclick="cambiarModulo('clientes', this)">👥 Clientes y Proveedores</a></li>
+        </ul>
+    </nav>
+
+    <main class="moqups-main-container">
+
+        <!-- Sección 1: Inventario -->
+        <section id="inventario" class="moqups-section-card modulo-seccion active">
+            <h3>REGISTRO DE PRODUCTOS (RF-02)</h3>
+            <p class="section-subtitle">📌 Nuevo Producto</p>
+            <form class="moqups-grid-form" onsubmit="return false;">
+                <div class="field-box">
+                    <label>Código de Barras</label>
+                    <input type="text" value="770123456789">
+                </div>
+                <div class="field-box">
+                    <label>Nombre del Producto</label>
+                    <input type="text" value="Arroz Diana 1KG">
+                </div>
+                <div class="field-box">
+                    <label>Precio de Compra</label>
+                    <input type="text" value="$3,100">
+                </div>
+                <div class="field-box">
+                    <label>Precio de Venta</label>
+                    <input type="text" value="$3,800">
+                </div>
+                <div class="field-box">
+                    <label>Stock Inicial</label>
+                    <input type="number" value="100">
+                </div>
+                <div class="field-box">
+                    <label>Stock Mínimo</label>
+                    <input type="number" value="15">
+                </div>
+                <button class="btn-moqups-action btn-green">💾 Guardar Producto</button>
+            </form>
+        </section>
+
+        <!-- Sección 2: POS -->
+        <section id="pos" class="moqups-section-card modulo-seccion">
+            <h3>PUNTO DE VENTA (POS) (RF-03)</h3>
+            <table class="moqups-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arroz Diana 1KG</td>
+                        <td>1</td>
+                        <td>$3,800</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="moqups-summary-box">
+                <div class="summary-line">
+                    <span>Total Neto:</span>
+                    <span class="total-badge">$ 3,800</span>
+                </div>
+                <div class="summary-line">
+                    <label>Monto Recibido</label>
+                    <input type="text" value="$5,000" class="input-summary">
+                </div>
+                <div class="summary-line">
+                    <span>Vueltas a entregar</span>
+                    <span>$1,200</span>
+                </div>
+            </div>
+            <button class="btn-moqups-action btn-green">🖨️ Registrar & Imprimir Ticket</button>
+        </section>
+
+        <!-- Sección 3: Créditos y Fiados -->
+        <section id="creditos" class="moqups-section-card modulo-seccion">
+            <h3>CRÉDITOS Y FIADOS (RF-04)</h3>
+            <p class="section-subtitle">👥 Asignar Cartera - Fiado</p>
+            <div class="moqups-search-group">
+                <label>Buscar Cliente</label>
+                <input type="text" value="María Gómez" class="input-full">
+            </div>
+            <div class="moqups-details-box">
+                <h4>Datos del Cliente:</h4>
+                <p><strong>Identificación:</strong> CC 52.345.678</p>
+                <p><strong>Saldo Anterior:</strong> $ 15,200</p>
+                <p><strong>Monto a Adicionar:</strong> $3,800</p>
+            </div>
+            <div class="moqups-buttons-container">
+                <button class="btn-moqups-action btn-orange">✓ Autorizar Crédito ("Fiado")</button>
+                <button class="btn-moqups-action btn-blue">Cancelar Asignación</button>
+            </div>
+        </section>
+
+        <!-- Sección 4: Reportes Rápidos -->
+        <section id="reportes" class="moqups-section-card modulo-seccion">
+            <h3>REPORTES RÁPIDOS (RF-05)</h3>
+            <p class="section-subtitle">📈 Estadísticas del Día</p>
+            <div class="moqups-details-box">
+                <p><strong>Total Vendido Hoy:</strong> $ 150,000 COP</p>
+                <p><strong>Transacciones Realizadas:</strong> 18 compras</p>
+                <p><strong>Producto Más Vendido:</strong> Arroz Diana 1KG</p>
+            </div>
+        </section>
+
+        <!-- Sección 5: Clientes y Proveedores -->
+        <section id="clientes" class="moqups-section-card modulo-seccion">
+            <h3>CLIENTES Y PROVEEDORES (RF-06)</h3>
+            <p class="section-subtitle">📇 Directorio Comercial</p>
+            <form class="moqups-grid-form" onsubmit="return false;">
+                <div class="field-box">
+                    <label>Nombre / Razón Social</label>
+                    <input type="text" value="Distribuidora El Molino S.A.S.">
+                </div>
+                <div class="field-box">
+                    <label>Documento / NIT</label>
+                    <input type="text" value="900.123.456-1">
+                </div>
+                <div class="field-box">
+                    <label>Teléfono de Contacto</label>
+                    <input type="text" value="3101234567">
+                </div>
+                <div class="field-box">
+                    <label>Tipo de Registro</label>
+                    <input type="text" value="Proveedor Frecuente">
+                </div>
+                <button class="btn-moqups-action btn-blue">👤 Guardar Contacto</button>
+            </form>
+        </section>
+
+        <!-- Sección 6: Módulo de Configuración (Activado mediante la tuerca de la esquina) -->
+        <section id="configuracion" class="moqups-section-card modulo-seccion">
+            <h3>CONFIGURACIÓN DEL SISTEMA (RF-07)</h3>
+            <p class="section-subtitle">⚙️ Parámetros Generales</p>
+            <div class="moqups-details-box">
+                <p><strong>Nombre del Establecimiento:</strong> Abarrotes El Progreso</p>
+                <p><strong>Impresora de Tickets:</strong> POS-80 Thermal Printer (Conectada)</p>
+                <p><strong>Moneda Local:</strong> Pesos Colombianos (COP)</p>
+                <p><strong>Cajero en Turno:</strong> admin (Administrador)</p>
+            </div>
+            <button class="btn-moqups-action btn-orange">🔄 Actualizar Parámetros</button>
+        </section>
+
+    </main>
+
+    <!-- Script de control de pestañas -->
+    <script src="../js/orden.js"></script>
+</body>
+</html>

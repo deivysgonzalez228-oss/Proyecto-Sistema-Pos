@@ -33,7 +33,14 @@ body {
     padding: 0 40px;
     border-bottom: 2px solid #1e7185;
 }
-.moqups-nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 10px; }
+.moqups-nav ul { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
 .moqups-nav ul li a {
     color: #cbd5e1;
     text-decoration: none;
@@ -79,3 +86,39 @@ body {
 .btn-green { background-color: #10b981; color: white; }
 .btn-orange { background-color: #f97316; color: white; }
 .btn-blue { background-color: #3b82f6; color: white; }
+/* Botón de Configuración y Salir en el Encabezado */
+.header-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-icon-header {
+    background-color: #0b4350;
+    border: 1px solid #1e7185;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-icon-header:hover {
+    background-color: #10b981;
+}
+
+.btn-logout-header {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #0b4350;
+}
+
+.btn-logout-header:hover {
+    color: #ffffff;
+    background-color: #ef4444;
+}

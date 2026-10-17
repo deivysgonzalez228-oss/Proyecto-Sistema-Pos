@@ -1,0 +1,11 @@
+[33mcommit df6f2c5afad0f911a7f371e66b51e60e1c471a35[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Deivys Gonzalez <deivysgonzalez228@gmail.com>
+Date:   Sun Sep 20 12:06:56 2026 -0500
+
+    V2: Agregado modulo de Reportes Rapidos RF-05
+
+[33mcommit 75598279a7e7a34bd1f594ba5ece5239f245a972[m
+Author: Deivys Gonzalez <deivysgonzalez228@gmail.com>
+Date:   Sun Sep 20 09:44:58 2026 -0500
+
+    Primer commit: proyecto base de HTML, CSS y JS
